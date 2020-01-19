@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
+import Card from '../Card/Card.js';
 
 class Column extends React.Component {
+    state = {
+      columns: this.props.cards || [],
+    }
+
   static propTypes = {
     titleColumn: PropTypes.string,
   }
@@ -10,7 +15,11 @@ class Column extends React.Component {
   render() {
     return (
         <section className={styles.component}>
-            <h3 className={styles.title}>{this.props.titleColumn}</h3>
+            <h3 className={styles.title}>{this.props.title}</h3>
+            <div> 
+                <Card />
+            </div>
+            
         </section>
     )
   }
