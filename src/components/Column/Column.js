@@ -9,11 +9,9 @@ class Column extends React.Component {
 
   render() {
     return (
-      <div>
         <section className={styles.component}>
             <h3 className={styles.title}>{this.props.titleColumn}</h3>
         </section>
-      </div>
     )
   }
 }

@@ -2,27 +2,29 @@ import React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import Column from '../Column/Column.js';
+import {settings} from '../../data/dataStore';
 import PropTypes from 'prop-types';
 
 class List extends React.Component {
   static propTypes = {
     title: PropTypes.node.isRequired,
-    children: PropTypes.node,
-    img: PropTypes.string,
+    description: PropTypes.node,
+    columns: PropTypes.array,
+    image: PropTypes.string,
     titleColumn: PropTypes.string,
   }
 
   static defaultProps = {
-    children: <p>I can do all the things!!!</p>,
+    description: settings.defaultListDescription,
   }
 
   render() {
     return (
       <div>
         <section className={styles.component}>
-          <Hero titleText={this.props.title} img={this.props.img} />
+          <Hero titleText={this.props.title} image={this.props.image} />
           <div className={styles.description}>
-            {this.props.children}
+            {this.props.description}
           </div>
           <div className={styles.columns}>
             <Column titleColumn={'Animals'} />
