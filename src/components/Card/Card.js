@@ -3,9 +3,6 @@ import styles from './Card.scss';
 import PropTypes from 'prop-types';
 
 class Card extends React.Component {
-  // state = {
-  //   title: this.props.columns || [],
-  // }
 
   static propTypes = {
     title: PropTypes.node,
