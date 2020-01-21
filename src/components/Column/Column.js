@@ -10,8 +10,6 @@ class Column extends React.Component {
     cards: this.props.cards || [],
   }
 
-  
-  
   static propTypes = {
     title: PropTypes.node.isRequired,
     cards: PropTypes.array,
@@ -33,17 +31,17 @@ class Column extends React.Component {
 
   render() {
     return (
-        <section className={styles.component}>
-            <h3 className={styles.title}>{this.props.title}</h3>
-            <div>
-              {this.props.cards.map(({key, ...cardProps}) => (
-                <Card  key={key} {...cardProps} />
-              ))}
-            </div>
-            <div>
-              <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
-            </div>
-          </section>
+      <section className={styles.component}>
+        <h3 className={styles.title}>{this.props.title}</h3>
+        <div>
+          {this.state.cards.map(({key, ...cardProps}) => (
+            <Card  key={key} {...cardProps} />
+          ))}
+        </div>
+        <div>
+          <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
+        </div>
+      </section>
     )
   }
 }
