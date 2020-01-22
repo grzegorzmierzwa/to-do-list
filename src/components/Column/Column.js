@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card.js';
-import {settings, listData } from '../../data/dataStore';
+import {settings} from '../../data/dataStore';
 import Creator from '../Creator/Creator.js';
 import Icon from '../Icons/Icon.js';
 
@@ -24,8 +24,8 @@ class Column extends React.Component {
           {
             key: state.cards.length ? state.cards[state.cards.length-1].key+1 : 0,
             title,
-          }
-        ]    
+          },
+        ],    
       }
     ));
   }
@@ -43,7 +43,7 @@ class Column extends React.Component {
           <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
         </div>
       </section>
-    )
+    );
   }
 }
 
