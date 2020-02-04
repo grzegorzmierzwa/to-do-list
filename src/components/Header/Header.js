@@ -3,7 +3,7 @@ import {NavLink, Link} from 'react-router-dom';
 import styles from './Header.scss';
 import Container from '../Container/Container';
 import Icon from '../Icons/Icon';
-import {settings} from '../../data/dataStore';
+import {settings, pageTiles} from '../../data/dataStore';
 
 class Header extends React.Component {
 
@@ -16,9 +16,9 @@ class Header extends React.Component {
               <Icon name={settings.search.icon} />
             </Link>
             <nav>
-              <NavLink exact to='/' activeClassName='active'>Home</NavLink>
-              <NavLink exact to='/info' activeClassName='active'>Info</NavLink>
-              <NavLink exact to='/FAQ' activeClassName='active'>FAQ</NavLink> 
+              <NavLink exact to='/' activeClassName='active'>{pageTiles.home}</NavLink>
+              <NavLink exact to='/info' activeClassName='active'>{pageTiles.info}</NavLink>
+              <NavLink exact to='/FAQ' activeClassName='active'>{pageTiles.faq}</NavLink> 
             </nav>
           </div>
         </Container>
