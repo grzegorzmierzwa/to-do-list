@@ -9,6 +9,9 @@ const baseConfig = () => ({
     path: path.join(__dirname, 'dist'),
     filename: 'scripts_bundle.js',
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
@@ -69,6 +72,7 @@ const prodConfig = () => ({
   }, 
   plugins: [
     new MiniCssExtractPlugin({
+      publicPath: '/',
       filename: 'styles_bundle_[name].css',
       chunkFilename: '[id].css',
     }),
